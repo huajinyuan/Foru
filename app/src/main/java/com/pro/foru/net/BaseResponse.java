@@ -11,6 +11,7 @@ public class BaseResponse {
     public String code;
     public String msg;
 
+
     public <T> T getData(Class<T> type) {
         return JSON.parseObject(data.toJSONString(), type);
     }
