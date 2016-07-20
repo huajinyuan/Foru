@@ -17,41 +17,109 @@
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <LinearLayout
             android:id="@+id/main_tab_view_Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#567890"
+            android:background="@color/bg_black"
             android:orientation="horizontal">
 
-            <TextView
+            <LinearLayout
                 android:id="@+id/main_tab_A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
                 android:gravity="center"
-                android:text="AAA" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
+                <ImageView
+                    android:id="@+id/img_maintabA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_home_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Home"
+                    android:textColor="@drawable/selector_home_tabtext" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/main_tab_B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
                 android:gravity="center"
-                android:text="BBB" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
+                <ImageView
+                    android:id="@+id/img_maintabB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_shop_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Shop"
+                    android:textColor="@drawable/selector_home_tabtext" />
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:id="@+id/main_tab_C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp"
                 android:gravity="center"
-                android:text="CCC" />
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_maintabC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_create_normal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Create"
+                    android:textColor="@drawable/selector_home_tabtext" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/main_tab_D"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_maintabD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_me_normal"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Center"
+                    android:textColor="@drawable/selector_home_tabtext" />
+            </LinearLayout>
+
 
         </LinearLayout>
 

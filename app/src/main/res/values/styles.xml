@@ -5,8 +5,11 @@
         <!-- Customize your theme here. -->
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--对应ActionBar的颜色。-->
+        <item name="colorPrimary">@color/bg_black</item>
+        <!--对应状态栏的颜色-->
+        <item name="colorPrimaryDark">@color/bg_black</item>
+        <!--对应EditText编辑时、RadioButton选中、CheckBox等选中时的颜色。-->
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 

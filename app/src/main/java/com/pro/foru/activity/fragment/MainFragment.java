@@ -27,7 +27,7 @@ public class MainFragment extends Fragment {
     private FragmentManager fragmentManager;
     private NetFragment mNetFragment;
     private WebFragment mWebFragment;
-    private GraphicsFragment mGraphicsFragment;
+//    private GraphicsFragment mGraphicsFragment;
 
 
     @Nullable
@@ -100,9 +100,9 @@ public class MainFragment extends Fragment {
         if (null != mWebFragment) {
             transaction.hide(mWebFragment);
         }
-        if (null != mGraphicsFragment) {
-            transaction.hide(mGraphicsFragment);
-        }
+//        if (null != mGraphicsFragment) {
+//            transaction.hide(mGraphicsFragment);
+//        }
     }
 
     public void setTabSelection(int index) {
@@ -128,14 +128,14 @@ public class MainFragment extends Fragment {
                 }
                 break;
             case 2:
-                if (null == mGraphicsFragment) {
-                    mGraphicsFragment = new GraphicsFragment();
-                    transaction.add(R.id.content, mGraphicsFragment);
-                }
-                else
-                {
-                    transaction.show(mGraphicsFragment);
-                }
+//                if (null == mGraphicsFragment) {
+//                    mGraphicsFragment = new GraphicsFragment();
+//                    transaction.add(R.id.content, mGraphicsFragment);
+//                }
+//                else
+//                {
+//                    transaction.show(mGraphicsFragment);
+//                }
                 break;
         }
         transaction.commitAllowingStateLoss();
