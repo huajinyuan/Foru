@@ -3,6 +3,9 @@ package com.pro.foru.net;
 
 import com.alibaba.fastjson.JSON;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by hjy on 16/6/22.
  */
@@ -14,6 +17,10 @@ public class BaseResponse {
 
     public <T> T getData(Class<T> type) {
         return JSON.parseObject(data.toJSONString(), type);
+    }
+    public<T> List<T> getDataList(Class<T> type)
+    {
+        return JSON.parseArray(data.toJSONString(), type);
     }
 
     @Override
