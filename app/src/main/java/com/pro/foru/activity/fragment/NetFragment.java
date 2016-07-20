@@ -47,12 +47,12 @@ public class NetFragment extends RxFragment {
     @OnClick(R.id.btn_post)
     public void doPost() {
         IRetrofitService retrofitService = RetrofitRequest.getInstance().getmRetrofit().create(IRetrofitService.class);
-        retrofitService.getInfo("abc@qq.com","123456","IkD4M40BxKbnVheA2Lq3Em87OOqKEH1o")
+        retrofitService.getInfo("abc@qq.com", "123456", "IkD4M40BxKbnVheA2Lq3Em87OOqKEH1o")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<BaseResponse>() {
                     @Override
-                        public void onCompleted() {
+                    public void onCompleted() {
                     }
 
                     @Override
@@ -70,6 +70,27 @@ public class NetFragment extends RxFragment {
 
     @OnClick(R.id.btn_get)
     public void doGet() {
+        IRetrofitService retrofitService = RetrofitRequest.getInstance().getmRetrofit().create(IRetrofitService.class);
+        retrofitService.getOrders("Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1Nzg3NGQyMjA1NmYyOTBmMWY3ZGY3YzEiLCJpc3MiOiJodHRwOlwvXC8xOTIuMTY4LjEwLjI0OTo4MDgwXC9hcGlcL3YxXC9sb2dpbiIsImlhdCI6MTQ2OTAwMTkxMSwiZXhwIjoxNDcxNTkzOTExLCJuYmYiOjE0NjkwMDE5MTEsImp0aSI6IjM0YjJkMmQ4NTQyYzc0ZDg4NTZkNWIzNzNmMGE1NGFjIn0.oFFczl8giHJeXxN9D-jjGsyKQFc7feTDOoiZz-MSA44","IkD4M40BxKbnVheA2Lq3Em87OOqKEH1o", 10, 1)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<BaseResponse>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(BaseResponse baseResponse) {
+                        F.e(baseResponse.toString());
+                    }
+                });
+
     }
 
 }
