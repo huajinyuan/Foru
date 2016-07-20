@@ -8,6 +8,6 @@ import rx.Observable;
  * Created by hjy on 16/6/22.
  */
 public interface IRetrofitService {
-    @POST("wbaiju/cgi/user_detailed.api")
-    Observable<BaseResponse> getInfo(@Query("account") String accouont);
+    @POST("api/v1/login")
+    Observable<BaseResponse> getInfo(@Query("email") String accouont,@Query("password") String pwd ,@Query("key") String apiKey);
 }
