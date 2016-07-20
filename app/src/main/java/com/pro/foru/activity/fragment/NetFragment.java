@@ -12,12 +12,16 @@ import com.bumptech.glide.Glide;
 import com.pro.foru.foru.R;
 import com.pro.foru.net.BaseResponse;
 import com.pro.foru.net.IRetrofitService;
+import com.pro.foru.net.RequestA;
 import com.pro.foru.net.RetrofitRequest;
+import com.pro.foru.utils.F;
+import com.pro.foru.utils.StringUtils;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit.Call;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -43,22 +47,23 @@ public class NetFragment extends RxFragment {
     @OnClick(R.id.btn_post)
     public void doPost() {
         IRetrofitService retrofitService = RetrofitRequest.getInstance().getmRetrofit().create(IRetrofitService.class);
-        retrofitService.getInfo("15280479951")
+        retrofitService.getInfo("abc@qq.com","123456","IkD4M40BxKbnVheA2Lq3Em87OOqKEH1o")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<BaseResponse>() {
                     @Override
-                    public void onCompleted() {
+                        public void onCompleted() {
                     }
 
                     @Override
                     public void onError(Throwable e) {
+                        F.e("onError :data is null");
                     }
 
                     @Override
                     public void onNext(BaseResponse baseResponse) {
-
-                        mTip.setText(baseResponse.data.toString());
+                        F.e(baseResponse.getData(RequestA.class).token);
+                        mTip.setText(baseResponse.getData(RequestA.class).token);
                     }
                 });
     }
