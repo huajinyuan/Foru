@@ -1,12 +1,11 @@
 package com.pro.foru.activity;
 
-        import android.os.Bundle;
+import android.os.Bundle;
 
-        import com.pro.foru.activity.fragment.MainFragment;
-        import com.pro.foru.foru.R;
-        import com.trello.rxlifecycle.components.support.RxFragmentActivity;
+import com.pro.foru.activity.fragment.MainFragment;
+import com.pro.foru.foru.R;
 
-public class MainActivity extends RxFragmentActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,6 +13,7 @@ public class MainActivity extends RxFragmentActivity {
         setContentView(R.layout.activity_main);
         initFragment();
     }
+
     private void initFragment() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.main_content, new MainFragment(), MainFragment.class.getName())

@@ -27,6 +27,7 @@ public class MainFragment extends Fragment {
     private FragmentManager fragmentManager;
     private NetFragment mNetFragment;
     private WebFragment mWebFragment;
+    private HomeShopFragment mHomeShopFragment;
 //    private GraphicsFragment mGraphicsFragment;
 
 
@@ -100,6 +101,9 @@ public class MainFragment extends Fragment {
         if (null != mWebFragment) {
             transaction.hide(mWebFragment);
         }
+        if (null != mHomeShopFragment) {
+            transaction.hide(mHomeShopFragment);
+        }
 //        if (null != mGraphicsFragment) {
 //            transaction.hide(mGraphicsFragment);
 //        }
@@ -113,19 +117,24 @@ public class MainFragment extends Fragment {
                 if (null == mNetFragment) {
                     mNetFragment = new NetFragment();
                     transaction.add(R.id.content, mNetFragment);
-                }
-                else {
+                } else {
                     transaction.show(mNetFragment);
                 }
                 break;
             case 1:
-                if (null == mWebFragment) {
+                if (null == mHomeShopFragment) {
+                    mHomeShopFragment = new HomeShopFragment();
+                    transaction.add(R.id.content, mHomeShopFragment);
+                } else {
+                    transaction.show(mHomeShopFragment);
+                }
+               /* if (null == mWebFragment) {
                     mWebFragment = new WebFragment();
                     transaction.add(R.id.content, mWebFragment);
                 }
                 else {
                     transaction.show(mWebFragment);
-                }
+                }*/
                 break;
             case 2:
 //                if (null == mGraphicsFragment) {
@@ -143,8 +152,7 @@ public class MainFragment extends Fragment {
 
     @OnClick({R.id.main_tab_A, R.id.main_tab_B, R.id.main_tab_C})
     public void actionClick(View view) {
-        switch (view.getId())
-        {
+        switch (view.getId()) {
             case R.id.main_tab_A:
                 setTabSelection(0);
                 break;

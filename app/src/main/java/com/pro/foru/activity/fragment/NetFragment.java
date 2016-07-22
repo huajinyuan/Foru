@@ -2,13 +2,17 @@ package com.pro.foru.activity.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.pro.foru.activity.MainActivity;
 import com.pro.foru.foru.R;
 import com.pro.foru.net.BaseResponse;
 import com.pro.foru.net.IRetrofitService;
@@ -35,12 +39,19 @@ public class NetFragment extends RxFragment {
     @BindView(R.id.imageView)
     public ImageView mImageView;
 
+    @BindView(R.id.toolbar)
+    protected Toolbar mToolBar;
+    @BindView(R.id.center_title)
+    TextView mCenterTitle;
+    @BindView(R.id.nav_left_text)
+    TextView mNavLeftText;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_nettest, null);
         ButterKnife.bind(this, view);
         Glide.with(this).load("http://goo.gl/gEgYUd").into(mImageView);
+        initToolBar(mToolBar, mCenterTitle, mNavLeftText);
         return view;
     }
 
@@ -92,5 +103,26 @@ public class NetFragment extends RxFragment {
                 });
 
     }
-
+    protected void initToolBar(Toolbar toolbar, TextView centerTitle, TextView navLeftText){
+        ((MainActivity)getActivity()).setSupportActionBar(toolbar);
+        ((MainActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setNavigationIcon(R.mipmap.icon_home_normal);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                popFragment();
+            }
+        });
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+//                switch (item.getItemId())
+//                {
+//                    case 111:
+//                    break;
+//                }
+                return false;
+            }
+        });
+    }
 }
