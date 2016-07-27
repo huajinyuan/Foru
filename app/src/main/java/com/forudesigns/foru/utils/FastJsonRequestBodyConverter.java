@@ -1,4 +1,4 @@
-package com.pro.foru.utils;
+package com.forudesigns.foru.utils;
 import com.alibaba.fastjson.JSON;
 import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.RequestBody;

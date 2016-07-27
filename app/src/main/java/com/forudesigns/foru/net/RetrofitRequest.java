@@ -1,16 +1,9 @@
-package com.pro.foru.net;
+package com.forudesigns.foru.net;
 
-import com.pro.foru.config.Constants;
-import com.pro.foru.utils.FastJsonConverterFactory;
-import com.squareup.okhttp.Interceptor;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-
-import java.io.IOException;
+import com.forudesigns.foru.utils.FastJsonConverterFactory;
+import com.forudesigns.foru.config.Constants;
 
 
-import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
 import retrofit.RxJavaCallAdapterFactory;
 

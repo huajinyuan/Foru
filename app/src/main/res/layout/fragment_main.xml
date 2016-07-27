@@ -30,17 +30,19 @@
                 android:id="@+id/main_tab_A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/main_tab_padding">
 
                 <ImageView
-                    android:id="@+id/img_maintabA"
+                    android:id="@+id/img_main_tabA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/icon_home_normal" />
 
                 <TextView
+                    android:id="@+id/tv_main_tabA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -53,17 +55,19 @@
                 android:id="@+id/main_tab_B"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/main_tab_padding">
 
                 <ImageView
-                    android:id="@+id/img_maintabB"
+                    android:id="@+id/img_main_tabB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/icon_shop_normal" />
 
                 <TextView
+                    android:id="@+id/tv_main_tabB"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -77,17 +81,19 @@
                 android:id="@+id/main_tab_C"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/main_tab_padding">
 
                 <ImageView
-                    android:id="@+id/img_maintabC"
+                    android:id="@+id/img_main_tabC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/icon_create_normal" />
 
                 <TextView
+                    android:id="@+id/tv_main_tabC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -101,17 +107,19 @@
                 android:id="@+id/main_tab_D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/main_tab_padding">
 
                 <ImageView
-                    android:id="@+id/img_maintabD"
+                    android:id="@+id/img_main_tabD"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/icon_me_normal"
-                    />
+                    android:src="@mipmap/icon_me_normal" />
+
                 <TextView
+                    android:id="@+id/tv_main_tabD"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -128,7 +136,7 @@
 
     <fragment
         android:id="@+id/id_left_menu"
-        android:name="com.pro.foru.activity.fragment.MenuLeftFragment"
+        android:name="com.forudesigns.foru.activity.fragment.MenuLeftFragment"
         android:layout_width="200dp"
         android:layout_height="match_parent"
         android:layout_gravity="left"

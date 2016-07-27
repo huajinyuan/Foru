@@ -1,4 +1,4 @@
-package com.pro.foru.config;
+package com.forudesigns.foru.config;
 
 /**
  * Created by hjy on 16/6/3.

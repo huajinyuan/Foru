@@ -1,4 +1,4 @@
-package com.pro.foru.utils;
+package com.forudesigns.foru.utils;
 
 import android.util.Log;
 

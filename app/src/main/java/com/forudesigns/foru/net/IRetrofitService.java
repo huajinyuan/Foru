@@ -1,4 +1,4 @@
-package com.pro.foru.net;
+package com.forudesigns.foru.net;
 
 import retrofit.http.GET;
 import retrofit.http.Header;

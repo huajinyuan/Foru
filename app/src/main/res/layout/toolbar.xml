@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/id_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <TextView
+            android:id="@+id/tv_nav_toobar_left_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:drawableLeft="@mipmap/icon_menu"
+            android:gravity="center"
+            android:padding="@dimen/main_tab_padding"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_title"
+            android:visibility="visible" />
+
+        <ImageView
+
+            android:id="@+id/img_nav_toolbar_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:padding="@dimen/main_tab_padding"
+            android:src="@mipmap/icon_search" />
+
+
+        <ImageView
+            android:id="@+id/img_nav_toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/icon_forulogo" />
+
+        <TextView
+            android:id="@+id/tv_nav_toolbar_title"
+            tools:text="标题"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_large"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/rel_nav_toobar_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end">
+
+
+            <ImageView
+                android:id="@+id/img_nav_toobar_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/main_tab_padding"
+                android:padding="@dimen/main_tab_padding"
+                android:src="@mipmap/icon_cart" />
+
+            <TextView
+                android:id="@+id/tv_nav_toobar_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_corner"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="@color/text_white"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+</FrameLayout>

@@ -1,4 +1,4 @@
-package com.pro.foru.wigets;
+package com.forudesigns.foru.wigets;
 
 /**
  * Created by hjy on 16/7/18.

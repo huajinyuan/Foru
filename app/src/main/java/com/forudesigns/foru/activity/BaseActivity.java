@@ -1,16 +1,14 @@
-package com.pro.foru.activity;
+package com.forudesigns.foru.activity;
 
+import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.CheckResult;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
-import com.pro.foru.foru.R;
+import com.forudesigns.foru.wigets.ToolBarHelper;
 import com.trello.rxlifecycle.ActivityEvent;
 import com.trello.rxlifecycle.ActivityLifecycleProvider;
 import com.trello.rxlifecycle.LifecycleTransformer;
@@ -21,8 +19,9 @@ import rx.subjects.BehaviorSubject;
 
 public class BaseActivity extends AppCompatActivity implements ActivityLifecycleProvider {
     private final BehaviorSubject<ActivityEvent> lifecycleSubject = BehaviorSubject.create();
-    private Toast mToast;
-    private View mToaskView;
+    private ToolBarHelper mToolBarHelper;
+    public Toolbar toolbar;
+
     @Override
     @NonNull
     @CheckResult
@@ -48,10 +47,28 @@ public class BaseActivity extends AppCompatActivity implements ActivityLifecycle
     @CallSuper
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mToaskView = LayoutInflater.from(this).inflate(R.layout.layout_base_toast, null);
-        mToast = Toast.makeText(this, null, Toast.LENGTH_SHORT);
-        mToast.setView(mToaskView);
         lifecycleSubject.onNext(ActivityEvent.CREATE);
+    }
+
+    @Override
+    public void setContentView(int layoutResID) {
+
+        mToolBarHelper = new ToolBarHelper(this, layoutResID);
+        toolbar = mToolBarHelper.getToolBar();
+        setContentView(mToolBarHelper.getContentView());
+        /*把 toolbar 设置到Activity 中*/
+        setSupportActionBar(toolbar);
+        /*自定义的一些操作*/
+        onCreateCustomToolBar(toolbar);
+    }
+
+
+    public void onCreateCustomToolBar(Toolbar toolbar) {
+        toolbar.setContentInsetsRelative(0, 0);
+    }
+
+    public void hideToolbar() {
+        mToolBarHelper.hideToolBar();
     }
 
     @Override
@@ -90,19 +107,17 @@ public class BaseActivity extends AppCompatActivity implements ActivityLifecycle
     }
 
     /**
-     * @Title: showToask
-     * @Description: 显示Toast
      * @param @param hint 文字提示内容
      * @throws
+     * @Title: showToask
+     * @Description: 显示Toast
      */
     public void showToask(String hint) {
 
-        showToask(hint, Toast.LENGTH_LONG);
+        showToask(hint, Toast.LENGTH_SHORT);
     }
 
     public void showToask(String hint, int duration) {
-        ((TextView) mToaskView.findViewById(R.id.base_toast_tv_tip)).setText(hint);
-        mToast.setDuration(duration);
-        mToast.show();
+        Toast.makeText(this, hint, duration).show();
     }
 }

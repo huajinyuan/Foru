@@ -1,4 +1,4 @@
-package com.pro.foru.utils;
+package com.forudesigns.foru.utils;
 
 /**
  * Created by Administrator on 2016/7/20.

@@ -1,15 +1,18 @@
-package com.pro.foru.activity.fragment;
+package com.forudesigns.foru.activity.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.nineoldandroids.view.ViewHelper;
 import com.pro.foru.foru.R;
@@ -21,7 +24,7 @@ import butterknife.OnClick;
 /**
  * Created by hjy on 16/6/4.
  */
-public class MainFragment extends Fragment {
+public class MainFragment extends BaseFragment {
     @BindView(R.id.id_drawerLayout)
     public DrawerLayout mDrawerLayout;
     private FragmentManager fragmentManager;
@@ -29,7 +32,25 @@ public class MainFragment extends Fragment {
     private WebFragment mWebFragment;
     private HomeShopFragment mHomeShopFragment;
 //    private GraphicsFragment mGraphicsFragment;
-
+    /**
+     * tab初始化
+     */
+    @BindView(R.id.img_main_tabA)
+    public ImageView mImgTabA;
+    @BindView(R.id.tv_main_tabA)
+    public TextView mTvTabA;
+    @BindView(R.id.img_main_tabB)
+    public ImageView mImgTabB;
+    @BindView(R.id.tv_main_tabB)
+    public TextView mTvTabB;
+    @BindView(R.id.img_main_tabC)
+    public ImageView mImgTabC;
+    @BindView(R.id.tv_main_tabC)
+    public TextView mTvTabC;
+    @BindView(R.id.img_main_tabD)
+    public ImageView mImgTabD;
+    @BindView(R.id.tv_main_tabD)
+    public TextView mTvTabD;
 
     @Nullable
     @Override
@@ -145,27 +166,56 @@ public class MainFragment extends Fragment {
 //                {
 //                    transaction.show(mGraphicsFragment);
 //                }
+
+                break;
+            case 3:
+
                 break;
         }
         transaction.commitAllowingStateLoss();
     }
 
-    @OnClick({R.id.main_tab_A, R.id.main_tab_B, R.id.main_tab_C})
+    @OnClick({R.id.main_tab_A, R.id.main_tab_B, R.id.main_tab_C, R.id.main_tab_D})
     public void actionClick(View view) {
+        clearSelection();
         switch (view.getId()) {
             case R.id.main_tab_A:
+                mTvTabA.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_white));
+                mImgTabA.setImageResource(R.mipmap.icon_home_select);
                 setTabSelection(0);
                 break;
             case R.id.main_tab_B:
+                mTvTabB.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_white));
+                mImgTabB.setImageResource(R.mipmap.icon_shop_select);
                 setTabSelection(1);
                 break;
             case R.id.main_tab_C:
+                mTvTabC.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_white));
+                mImgTabC.setImageResource(R.mipmap.icon_create_select);
                 setTabSelection(2);
+                break;
+            case R.id.main_tab_D:
+                mTvTabD.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_white));
+                mImgTabD.setImageResource(R.mipmap.icon_me_select);
+                setTabSelection(3);
                 break;
         }
 
     }
 
+    /**
+     * 还原tab状态
+     */
+    public void clearSelection() {
+        mTvTabA.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_gray));
+        mTvTabB.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_gray));
+        mTvTabC.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_gray));
+        mTvTabD.setTextColor(ContextCompat.getColor(getActivity(), R.color.text_gray));
+        mImgTabA.setImageResource(R.mipmap.icon_home_normal);
+        mImgTabB.setImageResource(R.mipmap.icon_shop_normal);
+        mImgTabC.setImageResource(R.mipmap.icon_create_normal);
+        mImgTabD.setImageResource(R.mipmap.icon_me_normal);
+    }
 
     /**
      * 开启新的Fragment
