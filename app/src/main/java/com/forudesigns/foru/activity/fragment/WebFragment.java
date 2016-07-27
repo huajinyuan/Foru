@@ -1,4 +1,4 @@
-package com.pro.foru.activity.fragment;
+package com.forudesigns.foru.activity.fragment;
 
 import android.os.Bundle;
 import android.os.Message;
