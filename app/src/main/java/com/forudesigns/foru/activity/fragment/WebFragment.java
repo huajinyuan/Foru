@@ -12,7 +12,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.pro.foru.foru.R;
+
+import com.forudesigns.foru.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

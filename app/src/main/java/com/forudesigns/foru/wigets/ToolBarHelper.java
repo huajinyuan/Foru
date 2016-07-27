@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.pro.foru.foru.R;
+import com.forudesigns.foru.R;
+
 
 /**
  * Created by Administrator on 2016/7/26.

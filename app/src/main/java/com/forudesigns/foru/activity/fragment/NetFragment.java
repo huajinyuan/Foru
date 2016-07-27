@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.forudesigns.foru.R;
 import com.forudesigns.foru.net.BaseResponse;
 import com.forudesigns.foru.net.IRetrofitService;
 import com.forudesigns.foru.net.RetrofitRequest;
 import com.forudesigns.foru.utils.F;
-import com.pro.foru.foru.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

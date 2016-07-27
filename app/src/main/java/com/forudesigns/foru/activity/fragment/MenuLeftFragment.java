@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.pro.foru.foru.R;
+import com.forudesigns.foru.R;
 
 
 public class MenuLeftFragment extends Fragment

@@ -21,7 +21,7 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 
-import com.pro.foru.foru.R;
+import com.forudesigns.foru.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -2,8 +2,8 @@ package com.forudesigns.foru.activity;
 
 import android.os.Bundle;
 
+import com.forudesigns.foru.R;
 import com.forudesigns.foru.activity.fragment.MainFragment;
-import com.pro.foru.foru.R;
 
 public class MainActivity extends BaseActivity {
 

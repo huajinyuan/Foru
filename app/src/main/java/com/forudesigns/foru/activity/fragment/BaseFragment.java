@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.forudesigns.foru.activity.BaseActivity;
 import com.forudesigns.foru.activity.MainActivity;
-import com.pro.foru.foru.R;
+import com.forudesigns.foru.R;
 import com.trello.rxlifecycle.components.support.RxFragment;
 
 /**

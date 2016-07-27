@@ -14,8 +14,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.forudesigns.foru.R;
 import com.nineoldandroids.view.ViewHelper;
-import com.pro.foru.foru.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -18,7 +18,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.pro.foru.foru.R;
+import com.forudesigns.foru.R;
 
 
 /**
